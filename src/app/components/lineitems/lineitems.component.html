@@ -1,0 +1,21 @@
+<p>lineitems works!</p>
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Quantity</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of cart | keyvalue; track $index) {
+            <tr>
+                <td>{{ item.key }}</td>
+                <td>{{ item.value.quantity }}</td>
+                <td>{{ item.value.totalPrice }}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

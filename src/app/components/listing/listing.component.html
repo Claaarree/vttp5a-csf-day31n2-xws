@@ -1,0 +1,12 @@
+<p>listing works!</p>
+
+@for (p of products; let idx = $index; track idx) {
+    <div>
+        <img [src]="p.imgSrc">
+        <p>Name: {{ p.name }}</p>
+        <p>Price: {{ p.price }}</p>
+        <button (click)="changeQtd(1, p)">Add</button>
+        <button (click)="changeQtd(-1, p)">Remove</button>
+    </div>
+  }
+
