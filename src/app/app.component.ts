@@ -46,7 +46,9 @@ export class AppComponent {
       const old: CartItem = this.cart.get(c.name)
       old.quantity += c.quantity
       old.totalPrice += c.totalPrice
-      this.cart.set(c.name, old)
+      if (old.quantity <= 0) {
+        this.cart.delete(c.name)
+      } 
     } else {
       this.cart.set(c.name, c)
     }
