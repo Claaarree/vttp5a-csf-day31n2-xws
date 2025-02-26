@@ -49,7 +49,7 @@ export class AppComponent {
       if (old.quantity <= 0) {
         this.cart.delete(c.name)
       } 
-    } else {
+    } else if (c.quantity > 0){
       this.cart.set(c.name, c)
     }
     console.info(this.cart)

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { CartItem } from '../model';
 
 @Component({
@@ -8,5 +8,5 @@ import { CartItem } from '../model';
   styleUrl: './lineitems.component.css'
 })
 export class LineitemsComponent {
-  @Input() cart= new Map
+  @Input() cart = new Map()
 }
