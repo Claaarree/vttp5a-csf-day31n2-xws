@@ -1,7 +1,10 @@
-<div>
-    <app-listing [products]="products" (toAdd)="changeQtd($event)"></app-listing>
-    
-    <app-lineitems [cart]="cart"></app-lineitems>
-    <br><br>
-    <app-cart [cart]="cart"></app-cart>
+<div class="container text-center">
+    <div class="row">
+        <app-listing class="col" [products]="products" (toAdd)="changeQtd($event)"></app-listing>
+        <div class="col">
+            <app-cart class="row" [cart]="cart"></app-cart>
+            <app-lineitems class="row" [cart]="cart"></app-lineitems>
+
+        </div>
+    </div>
 </div>

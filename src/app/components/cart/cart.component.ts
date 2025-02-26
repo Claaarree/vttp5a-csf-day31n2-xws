@@ -26,20 +26,27 @@ export class CartComponent implements OnInit{
       name: this.fb.control<string>(''),
       address: this.fb.control<string>(''),
       delivery: this.fb.control<string>('delivery'),
+      checkout: this.checkout
     })
   }
 
   private mapToList(v: CartItem) {
-    console.info("hello: " + v)
+    console.info("hello: " + v.name)
     const item = this.fb.group({
-      name: v.name,
-      quantity: v.quantity,
-      totalPrice: v.totalPrice
+      name: this.fb.control<string>(v.name),
+      quantity: this.fb.control<number>(v.quantity),
+      totalPrice: this.fb.control<number>(v.totalPrice)
     })
     this.checkout.push(item)
+    console.info("hello2: " + item.get("name"))
   }
 
   protected handleSubmit() {
+    this.cart.forEach(v => {
+      this.mapToList(v)
+    })
+    
+    // use below to set the form attribute "checkout" directly as the "cart" map
     // this.orderForm.value.checkout = this.cart
     console.log(this.orderForm.value)
   }

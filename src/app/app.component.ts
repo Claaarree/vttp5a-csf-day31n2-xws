@@ -53,7 +53,6 @@ export class AppComponent {
       this.cart.set(c.name, c)
     }
     console.info(this.cart)
-    // this.toAdd.next(p)
   }
   
 }

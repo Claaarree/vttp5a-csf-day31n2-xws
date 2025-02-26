@@ -1,4 +1,4 @@
-<p>lineitems works!</p>
+
 
 <table>
     <thead>
@@ -16,6 +16,11 @@
                 <td>{{ item.value.totalPrice }}</td>
             </tr>
         }
+        <tr>
+            <td></td>
+            <td>Total price</td>
+            <td>{{ calculateFinalPrice() }}</td>
+        </tr>
     </tbody>
 </table>
 

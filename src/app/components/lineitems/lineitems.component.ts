@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { CartItem } from '../model';
 
 @Component({
@@ -7,6 +7,15 @@ import { CartItem } from '../model';
   templateUrl: './lineitems.component.html',
   styleUrl: './lineitems.component.css'
 })
-export class LineitemsComponent {
-  @Input() cart = new Map()
+export class LineitemsComponent{
+  @Input() cart!: Map<string, CartItem>
+  
+  
+  
+  calculateFinalPrice(): number {
+    var finalPrice: number = 0
+    this.cart.forEach(v => {finalPrice += v.totalPrice
+    })
+    return finalPrice
+  }
 }
